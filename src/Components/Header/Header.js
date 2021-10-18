@@ -5,7 +5,7 @@ import toplogo from '../../Images/icon.png'
 
 const Header = () => {
     return (
-        <div className="w-100">
+        <div className="container">
 
             <div className="bg-light d-flex justify-content-center  mb-0">
                 <div>
