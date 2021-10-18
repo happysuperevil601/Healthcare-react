@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Laboratory Analysis",
+        "image": "https://img.freepik.com/free-photo/biologist-researcher-working-vaccine-development-against-virus_482257-16128.jpg?size=626&ext=jpg",
+        "description": "Our test result are more accurate than any other laboratory.Our compounder are more expert.Everyday we do aleast ten thousand tests",
+        "price": 5
+    },
+    {
+        "id": 2,
+        "name": "Home visits",
+        "image": "https://image.freepik.com/free-photo/young-asia-lady-nurse-giving-covid-19-flu-antivirus-vaccine-shot-male-patient-wear-face-mask-protection-from-virus-disease_7861-2769.jpg",
+        "description": " Progressively maintain extensive infomediaries via extensible niches Dramatically disseminate metrics.",
+        "price": 10
+    },
+    {
+        "id": 3,
+        "name": "Air ambulance sevices",
+        "image": "https://image.freepik.com/free-photo/yellow-rescue-medical-helicopter-site-outside-city_298424-546.jpg",
+        "description": "Appropriately empower dynamic leadership skills after business portals.Globally myocardinate interactive supply.",
+        "price": 20
+    },
+    {
+        "id": 4,
+        "name": "Great facilities",
+        "image": "https://image.freepik.com/free-photo/long-hospital-corridor_117023-1761.jpg",
+        "description": "Dynamically target high- payoff intellectual capital for customized technologies.Objectively integrate emerging core.",
+        "price": 30
+    },
+    {
+        "id": 5,
+        "name": "Reliable nursing staff",
+        "image": "https://image.freepik.com/free-photo/serious-doctor-medical-mask-cap-looking_171337-5807.jpg",
+        "description": "Distinctively re-engineer revolutionary meta - services and premium architectures.Intrinsically incubate intuitive opportunities.",
+        "price": 40
+    },
+    {
+        "id": 6,
+        "name": "Premium facilities",
+        "image": "https://image.freepik.com/free-photo/empty-hospital-ward-designed-with-medical-equipment_482257-7609.jpg",
+        "description": "Distinctively re - engineer revolutionary meta - services and premium architectures.Intrinsically incubate intuitive opportunities.",
+        "price": 40
+    }
+]

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../../Images/Happy doctor.jpg'
+import Service from '../Service/Service';
+
 
 const Home = () => {
+    const [services, setServices] = useState([])
+    useEffect(() => {
+        fetch("./services.json")
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
     return (
         <div className="container" >
             <div className="row justify-content-center align-items-center">
@@ -14,8 +22,18 @@ const Home = () => {
 
                     </p>
                 </div>
-            </div>
 
+            </div>
+            <div className="container mx-auto mt-5">
+                <h2 className=" fw-bolder">Explore Our <span className="text-primary">Health</span> services</h2>
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+
+                    {
+                        services.map(service => <Service service={service}></Service>)
+                    }
+
+                </div>
+            </div>
 
 
         </div>

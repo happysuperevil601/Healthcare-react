@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import Appointment from './Components/Appointment/Appointment';
 import Shop from './Components/Shop/Shop';
 import Notfound from './Components/Notfound/Notfound';
+import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/shop" >
             <Shop></Shop>
+          </Route>
+          <Route path="/purchaseService/:id" >
+            <ServiceDetails></ServiceDetails>
           </Route>
           <Route path="*" >
             <Notfound></Notfound>
