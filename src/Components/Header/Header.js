@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Favicon from '../../Images/instrument.png'
+import toplogo from '../../Images/icon.png'
 
 const Header = () => {
     return (
-        <div>
+        <div className="w-100">
+
+            <div className="bg-light d-flex justify-content-center  mb-0">
+                <div>
+                    <img src={toplogo} style={{ height: '60px', width: '100px' }} alt="" />
+                </div>
+                <p className="h1 fw-bold ">JHealthcare</p>
+            </div>
+
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/icon">
@@ -20,7 +29,7 @@ const Header = () => {
                                 <Link to="/home" className="nav-link">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/services" className="nav-link">Services</Link>
+                                <Link to="/appointment" className="nav-link">Appointment</Link>
                             </li>
 
                             <li className="nav-item">

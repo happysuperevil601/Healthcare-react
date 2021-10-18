@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
 
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );
