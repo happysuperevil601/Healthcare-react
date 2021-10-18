@@ -9,6 +9,7 @@ const Home = () => {
         fetch("./services.json")
             .then(res => res.json())
             .then(data => setServices(data))
+
     }, [])
     return (
         <div className="container" >

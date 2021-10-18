@@ -4,29 +4,26 @@ import { useParams } from 'react-router';
 
 const ServiceDetails = () => {
     const { id } = useParams();
-    const [details, setDetails] = useState([])
+    const [employeesDetails, setEmployeesDetails] = useState([])
+    const [singleDetails, setSingleDetails] = useState({})
     useEffect(() => {
-        fetch("./services.json")
+        fetch('/services.json')
             .then(res => res.json())
-            .then(data => setDetails(data))
+            .then(data => setEmployeesDetails(data))
+
     }, [])
 
-    const serviceDetails = details.filter(detail => detail.id === id)
+    useEffect(() => {
+        const foundEmployee = employeesDetails.filter(td => td.id === id)
+        setSingleDetails(foundEmployee)
+    }, [employeesDetails])
+
+
     return (
         <div>
-            <div className="col">
-                <div className="card h-100 shadow-lg">
-                    <h5 className="card-title">id:{id}</h5>
-                    <img src={serviceDetails[0]?.image} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">Service:{serviceDetails[0]?.name}</h5>
-                        <p className="card-text">Description:{serviceDetails[0]?.description}</p>
-                        <p className="card-text">Price:{serviceDetails[0]?.price}</p>
+            <h1>This is a service details page {id}</h1>
+            <h2>Name:{singleDetails?.name}</h2>
 
-                    </div>
-
-                </div>
-            </div>
         </div>
     );
 };
