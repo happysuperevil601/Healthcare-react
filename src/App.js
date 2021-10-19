@@ -10,6 +10,7 @@ import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -25,15 +26,16 @@ function App() {
             <Route path="/home" >
               <Home></Home>
             </Route>
-            <Route path="/appointment" >
-              <Appointment></Appointment>
-            </Route>
-            <Route path="/shop" >
-              <Shop></Shop>
-            </Route>
-            <Route path="/purchaseService/:id" >
+            <PrivateRoute path="/purchaseService/:id" >
               <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/appointment" >
+              <Appointment></Appointment>
+            </PrivateRoute>
+            <PrivateRoute path="/shop">
+              <Shop></Shop>
+            </PrivateRoute>
+
             <Route path="/login" >
               <Login></Login>
             </Route>

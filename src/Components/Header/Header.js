@@ -38,9 +38,6 @@ const Header = () => {
                                 <Link to="/shop" className="nav-link">Shop</Link>
                             </li>
 
-                            <li className="nav-item">
-                                <Link to="/About" className="nav-link">About us</Link>
-                            </li>
                             {user.email && <span style={{ color: 'Green', backgroundColor: 'white' }}>Hello, {user.displayName}</span>}
                             {user.email ? <button className="btn btn-warning me-2" onClick={logOut}>logout</button>
 
