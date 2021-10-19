@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { handleRegister, handleEmailChange, handlePasswordChange, handleRegistration } = useAuth()
+    const { handleRegister, handleEmailChange, handlePasswordChange, handleRegistration, error, toggleLogin, isLogin } = useAuth()
 
     return (
         <div>
@@ -11,7 +11,7 @@ const Register = () => {
                 <div className="login-box d-flex align-items-center justify-content-center mt-4">
                     <div className="login bg-light">
                         <div className="login-box">
-                            <h2 className="text-primary">Register Form</h2>
+                            <h2 className="text-primary">{isLogin ? "Login" : "Register"} Form</h2>
                             <form onSubmit={handleRegistration}>
                                 <input
                                     onChange={handleEmailChange}
@@ -30,13 +30,13 @@ const Register = () => {
                                     placeholder="Enter your Password"
                                     required
                                 />
-                                {/* <input onClick={handleRegister}
-                                    className="mt-3 w-50 btn btn-success m-auto"
-                                    type="submit"
-                                    value="Register"
-                                /> */}
+                                <div class="mb-3 form-check">
+                                    <input onChange={toggleLogin} type="checkbox" class="form-check-input" id="exampleCheck1" />
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <div className="text-danger">{error}</div>
                                 <br />
-                                <button onClick={handleRegister} className="btn btn-success ">Register</button>
+                                <button onClick={handleRegister} className="btn btn-success ">{isLogin ? 'Login' : "Register"}</button>
                             </form>
                             <p>Already have an Account? <Link className="text-decoration-none text-primary" to="/login">Login</Link></p>
                         </div>

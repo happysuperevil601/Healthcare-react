@@ -6,8 +6,9 @@ firebaseAppInit();
 const useFirebase = () => {
     const [user, setUser] = useState({})
     const [email, setEmail] = useState("")
+    const [error, setError] = useState("")
+    const [isLogin, setIsLogin] = useState(false)
     const [password, setPassword] = useState("")
-    const [error, setError] =
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -43,23 +44,38 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                setError('')
             })
-
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
 
 
     const handleRegister = () => {
         if (password.length < 6) {
+            setError("password must be 6 characters long")
             return;
         }
-        handleUserRegister(email, password)
+        if (isLogin) {
+
+            handleUserLogin(email, password)
+        }
+        else {
+            handleUserRegister(email, password)
+        }
+
     }
 
     const handleUserLogin = (email, password) => {
+
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 console.log(result.user)
+            })
+            .catch(error => {
+                setError(error.message)
             })
     }
     const handleRegistration = e => {
@@ -68,6 +84,13 @@ const useFirebase = () => {
         console.log("registration will be added")
 
     }
+
+
+
+    const toggleLogin = e => {
+        setIsLogin(e.target.checked)
+    }
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -82,6 +105,9 @@ const useFirebase = () => {
         user,
         logInusingGoogle,
         logOut,
+        error,
+        toggleLogin,
+        isLogin,
         handleEmailChange,
         handlePasswordChange,
         handleRegister,
