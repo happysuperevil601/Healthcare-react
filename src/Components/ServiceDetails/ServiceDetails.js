@@ -7,28 +7,47 @@ const ServiceDetails = () => {
 
     const [serviceDetails, setServiceDetails] = useState([])
 
-    const [singleService, setSingleService] = useState({})
 
     useEffect(() => {
         fetch("/services.json")
             .then(res => res.json())
-            .then(data => setServiceDetails(data))
+            .then((data) => {
+                const foundService = data.filter(detail => detail.id == id)
+                setServiceDetails(foundService);
+            })
     }, [])
 
-    useEffect(() => {
-        if (serviceDetails.length > 0) {
-            const foundService = serviceDetails.filter(detail => detail.id === id)
-            setSingleService(foundService);
-        }
 
-    }, [])
 
+    const { name, description, image, price } = serviceDetails[0] || {}
     return (
         <div>
-            <h1>{id}</h1>
-            <h1>Service Details coming soon</h1>
-            <h2>service name:{singleService?.name}</h2>
+            <div className="container w-25 mt-4">
+                <div className="col ">
+                    <div className="card h-100 shadow-lg">
+                        <img src={image} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                            <h5 className="card-title">Service:{name}</h5>
+                            <p className="card-text">Description:{description}</p>
+                            <h5 className="card-text text-bold">Price:${price}</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
     );
 };
 
