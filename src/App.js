@@ -9,12 +9,13 @@ import Notfound from './Components/Notfound/Notfound';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
-import { AuthContext } from './Context/AuthProvider';
+import AuthProvider from './Context/AuthProvider';
+
 
 function App() {
   return (
     <div className="App">
-      <AuthContext.Provider>
+      <AuthProvider>
         <Router>
           <Header></Header>
           <Switch>
@@ -46,7 +47,7 @@ function App() {
           </Switch>
           <Footer></Footer>
         </Router>
-      </AuthContext.Provider>
+      </AuthProvider>
 
     </div>
   );

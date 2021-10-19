@@ -5,8 +5,10 @@ import notFoundImg from '../../Images/Notfound.jpg'
 const Notfound = () => {
     return (
         <div className="container">
+
             <img src={notFoundImg} alt="" /><br />
-            <Link to="/home"><button className="btn btn-primary">Home</button></Link>
+            <Link to="/home"><button className="btn btn-primary">Go to Home</button></Link>
+
 
         </div>
     );

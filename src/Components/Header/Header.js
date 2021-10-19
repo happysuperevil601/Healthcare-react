@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Favicon from '../../Images/instrument.png'
 import toplogo from '../../Images/icon.png'
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <div className="container">
 
@@ -39,13 +41,15 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to="/About" className="nav-link">About us</Link>
                             </li>
+                            {user.email && <span style={{ color: 'Green', backgroundColor: 'white' }}>Hello, {user.displayName}</span>}
+                            {user.email ? <button className="btn btn-warning me-2" onClick={logOut}>logout</button>
+
+                                :
+                                <li className="nav-item">
+                                    <Link to="/login" className="nav-link">Login</Link>
+                                </li>}
 
 
-                            <li className="nav-item">
-                                <Link to="/login" className="nav-link"><button className="btn btn-primary me-2" >Login</button></Link>
-                            </li>
-
-                            {/* <button className="btn btn-primary me-2" >Log In</button> */}
                         </ul>
                     </div>
                 </div>
