@@ -22,7 +22,6 @@ const Home = () => {
                 <div className="col-md-6 justify-content-center align-items-center">
                     <h1 className="h1 font-weight-bold text-uppercase">we <span className="text-primary">care</span> <br /> for your <span className="text-primary">Health</span></h1>
                     <p className="font-italic font-weight-bold">We at JHealthcare are always fully focused on helping your to overcame any surgeon procedure, with great commitment and easy recovery.We will also  provide you the medical services so that you can trust us.
-
                     </p>
                 </div>
 

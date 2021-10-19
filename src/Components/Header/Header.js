@@ -39,7 +39,13 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to="/About" className="nav-link">About us</Link>
                             </li>
-                            <button className="btn btn-primary me-2" >Log In</button>
+
+
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link"><button className="btn btn-primary me-2" >Login</button></Link>
+                            </li>
+
+                            {/* <button className="btn btn-primary me-2" >Log In</button> */}
                         </ul>
                     </div>
                 </div>
