@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../../Images/Happy doctor.jpg'
 import Service from '../Service/Service';
+import Specialist from '../Specialist/Specialist';
+import Testimonials from '../Testimonials/Testimonials';
 
 
 const Home = () => {
@@ -25,7 +27,7 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className="container mx-auto mt-5">
+            <div className="container mx-auto mt-5 bg-light">
                 <h2 className=" fw-bolder">Explore Our <span className="text-primary">Health</span> services</h2>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
 
@@ -34,6 +36,16 @@ const Home = () => {
                     }
 
                 </div>
+            </div>
+
+            <div className="mt-5 bg-light">
+                <h2 className=" fw-bolder">Our <span className="text-primary">Experts</span></h2>
+                <Specialist></Specialist>
+            </div>
+
+            <div className="mt-5 bg-light">
+                <h2 className="fw-bolder mb-2">Patient <span className="text-primary">Testimonials</span></h2>
+                <Testimonials></Testimonials>
             </div>
 
 
