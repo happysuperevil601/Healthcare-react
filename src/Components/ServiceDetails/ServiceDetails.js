@@ -7,7 +7,6 @@ const ServiceDetails = () => {
 
     const [serviceDetails, setServiceDetails] = useState([])
 
-
     useEffect(() => {
         fetch("/services.json")
             .then(res => res.json())
@@ -16,7 +15,6 @@ const ServiceDetails = () => {
                 setServiceDetails(foundService);
             })
     }, [])
-
 
 
     const { name, description, image, price } = serviceDetails[0] || {}
@@ -28,7 +26,6 @@ const ServiceDetails = () => {
                         <img src={image} className="card-img-top " alt="..." />
                         <div className="card-body">
 
-
                             <p className="text-nowrap"><strong >Service:{name}</strong></p>
                             <p className="card-text"> <strong>Description:</strong> {description}</p>
 
@@ -38,34 +35,8 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            {/* <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center text-md-left p-2">
-                        <img src={image} className="img-fluid" alt="..." />
-                    </div>
-                    <div className="justify-content-center align-items-center">
-                        <h5 className="card-title">Service:{name}</h5>
-                        <p className="card-text">Description:{description}</p>
-                        <h5 className="card-text text-bold">Price:${price}</h5>
-                    </div>
-                </div>
-            </div> */}
-
-
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     );
 };
