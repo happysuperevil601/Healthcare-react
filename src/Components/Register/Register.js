@@ -42,13 +42,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row ">
-                    <div className="login-area col-md-6">
 
-
-
-                    </div>
-                </div>
             </div>
 
 

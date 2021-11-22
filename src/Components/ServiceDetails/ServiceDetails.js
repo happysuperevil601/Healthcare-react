@@ -29,7 +29,7 @@ const ServiceDetails = () => {
                             <p className="text-nowrap"><strong >Service:{name}</strong></p>
                             <p className="card-text"> <strong>Description:</strong> {description}</p>
 
-                            <p className="text-nowrap"><strong >Price:</strong> ${price}</p>
+                            <p className="text-nowrap"><strong >Price:</strong> $ {price}</p>
                         </div>
 
                     </div>
